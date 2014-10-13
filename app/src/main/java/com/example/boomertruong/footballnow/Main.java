@@ -18,7 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-
+// com.example.boomertruong.footballnow
 public class Main extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
