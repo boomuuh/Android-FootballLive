@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,7 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import Templates.MatchHeader;
+import Templates.TeamSheet;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 // com.example.boomertruong.footballnow
 public class Main extends Activity
@@ -32,10 +39,15 @@ public class Main extends Activity
      */
     private CharSequence mTitle;
 
+
+    @InjectView(R.id.container)
+    FrameLayout mMatchHeaderContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -132,6 +144,11 @@ public class Main extends Activity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+                Log.d("Main","oncreateview placeholderafragment adding match header");
+                MatchHeader mh = MatchHeader.newInstance("Manchester United", R.drawable.manu_crest, "Arsenal", R.drawable.arsenal_crest);
+                getFragmentManager().beginTransaction().replace(R.id.container, mh, "MATCH_HEADER").commit();
+            }
             return rootView;
         }
 

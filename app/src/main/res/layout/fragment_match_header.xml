@@ -4,41 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="Templates.MatchHeader">
-
-    <FrameLayout
-        android:id="@+id/team_left_container"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_toLeftOf="@id/team_left_score"
-        android:layout_toStartOf="@id/team_left_score"
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
-        android:id="@+id/team_left_score"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="25sp"
-        android:text="@string/default_score"
-        android:layout_toLeftOf="@id/match_time"
-        android:layout_toStartOf="@id/match_time"
-        />
-
     <TextView
         android:id="@+id/match_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/team_divider"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textSize="15sp"
         android:text="@string/default_match_time"/>
 
-
     <TextView
-        android:id="@+id/team_divider"
+        android:id="@+id/team_left_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="25sp"
+        android:text="@string/default_score"
+        android:layout_toLeftOf="@id/match_time"
+        android:layout_toStartOf="@id/match_time"
+        />
+    <FrameLayout
+        android:id="@+id/team_left_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/team_left_score"
+        android:layout_toStartOf="@id/team_left_score"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+
+    <TextView
+        android:id="@id/team_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:textSize="30sp"
         android:text="@string/match_header_score_divider"
         />
@@ -46,7 +52,9 @@
     <TextView
         android:id="@+id/team_right_score"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_toRightOf="@id/match_time"
         android:layout_toEndOf="@id/match_time"
         android:textSize="25sp"
@@ -56,10 +64,11 @@
     <FrameLayout
         android:id="@+id/team_right_container"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_toRightOf="@id/team_right_score"
         android:layout_toEndOf="@id/team_right_score"
-        android:layout_centerHorizontal="true"
         />
 
 </RelativeLayout>

@@ -66,6 +66,7 @@ public class TeamSheet extends Fragment {
 
 
         ImageView mTeamCrest = ButterKnife.findById(v,R.id.team_crest_id);
+
         Picasso.with(context)
                 .load(b.getInt(CLUB_CREST_ID))
                 .fit()
@@ -85,12 +86,12 @@ public class TeamSheet extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        try {
+//            mListener = (OnFragmentInteractionListener) activity;
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException(activity.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override
