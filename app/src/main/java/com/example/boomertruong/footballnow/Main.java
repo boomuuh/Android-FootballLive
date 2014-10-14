@@ -66,6 +66,8 @@ public class Main extends Activity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+
+
     }
 
     public void onSectionAttached(int number) {
@@ -78,6 +80,9 @@ public class Main extends Activity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                Log.d("Main","onNavigationDrawerItemSelected " + number);
+                MatchHeader mh = MatchHeader.newInstance("Manchester United", R.drawable.manu_crest, "Arsenal", R.drawable.arsenal_crest);
+                getFragmentManager().beginTransaction().replace(R.id.header_container, mh, "MATCH_HEADER").commit();
                 break;
         }
     }
@@ -144,11 +149,7 @@ public class Main extends Activity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
-                Log.d("Main","oncreateview placeholderafragment adding match header");
-                MatchHeader mh = MatchHeader.newInstance("Manchester United", R.drawable.manu_crest, "Arsenal", R.drawable.arsenal_crest);
-                getFragmentManager().beginTransaction().replace(R.id.container, mh, "MATCH_HEADER").commit();
-            }
+
             return rootView;
         }
 

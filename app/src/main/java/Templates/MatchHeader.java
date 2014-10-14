@@ -69,7 +69,7 @@ public class MatchHeader extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_match_header, container, false);
+        View v =  inflater.inflate(R.layout.fragment_match_header_2, container, false);
         Log.d("MatchHeader", "onCreateView adding team 1 and 2");
         Bundle b = getArguments();
         TeamSheet t1 = TeamSheet.newInstance(b.getString(TEAM_ONE),b.getInt(T1_CREST_RES_ID));

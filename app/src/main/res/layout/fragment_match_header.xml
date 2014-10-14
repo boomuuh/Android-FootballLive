@@ -60,7 +60,7 @@
     <FrameLayout
         android:id="@+id/team_right_container"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:layout_toRightOf="@id/team_right_score"
         android:layout_toEndOf="@id/team_right_score"

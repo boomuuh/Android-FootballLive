@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@id/team_left_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="@string/default_score"
+        android:layout_toLeftOf="@+id/match_time"
+        android:layout_toStartOf="@id/match_time"
+        />
+
+
+    <TextView
+        android:id="@id/match_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        android:text="@string/default_match_time"/>
+
+<!--    <TextView
+        android:id="@id/team_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/match_time"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/match_time"
+        android:textSize="sp"
+        android:text="@string/match_header_score_divider"
+        />-->
+
+    <TextView
+        android:id="@+id/team_right_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/match_time"
+        android:layout_toEndOf="@id/match_time"
+        android:textSize="35sp"
+        android:text="@string/default_score"
+        />
+
+</RelativeLayout>
